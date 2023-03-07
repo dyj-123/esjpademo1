@@ -17,4 +17,4 @@ public @interface SensitiveField {
 }
 
 ```
-@SensitiveMethod 在方法上加该字段，说明该方法中的参数是需要加密的和@Sensitive 配合使用，在使用@Sensitive时必须给方法加上SensitiveMethod
+@SensitiveMethod 在方法上加该字段，说明该方法中的参数是需要加密的和@SensitiveField 配合使用，在使用@SensitiveField时必须给方法加上SensitiveMethod
