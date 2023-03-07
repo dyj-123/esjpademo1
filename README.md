@@ -1,3 +1,7 @@
+## 版本
+* java 1.8
+* springboot 2.7
+* es 17.7.X
 # esjpademo1
 ## 两个索引
 1、newperson: 人口数据，加密的数据
