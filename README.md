@@ -18,3 +18,6 @@ public @interface SensitiveField {
 
 ```
 @SensitiveMethod 在方法上加该字段，说明该方法中的参数是需要加密的和@SensitiveField 配合使用，在使用@SensitiveField时必须给方法加上SensitiveMethod
+
+## swagger 页面地址
+127.0.0.1:8080/doc.html
