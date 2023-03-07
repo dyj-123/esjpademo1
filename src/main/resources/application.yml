@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: Iamdtcdzt123@
+    url: jdbc:mysql://127.0.0.1:3306/eladmin?characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  elasticsearch:
+    uris: http://localhost:9200
+    username: elastic
+    password: a4HXPBpWZ6wLtKE4LsTT
+    mvc:
+      pathmatch:
+        matching-strategy: ant_path_matcher
+rsa:
+  public_key: ${RSA_PUBLIC_KEY:MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC4X66HKXf8JyFoEYSo/6nqru5AhQ7f8d2RLOQ6+9hNitnWbBi9PcIVMvZ0uekn4Rx8x7hpNktEq+VVktURTxYhP7RbS8wixIPXYjr1RxpHRtgsI3m1gnmsJTNCaZfpRu9CuHcKBZ0x/cPEK/mdHZ3nXUZ1X+w6dIdorM8hNUMUBQIDAQAB}
+  private_key: ${RSA_PRIVATE_KEY:MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBALhfrocpd/wnIWgRhKj/qequ7kCFDt/x3ZEs5Dr72E2K2dZsGL09whUy9nS56SfhHHzHuGk2S0Sr5VWS1RFPFiE/tFtLzCLEg9diOvVHGkdG2CwjebWCeawlM0Jpl+lG70K4dwoFnTH9w8Qr+Z0dneddRnVf7Dp0h2iszyE1QxQFAgMBAAECgYEAk55IJn/VSVYrMR+Vj5njebtFlvLxzevg8nN26KLrtGoPr9YsmJfx5PdAzIRtYTijjmR6CgMmkHzwyWsenRUtKWXqSZ3LZmXKncjPenQOjNNUas5QMBQhNdPhKox4twURJEC3WIhoJ9KluAvnDaCYgOxVjv7I5Uno0RbIwz9x+aECQQDaMaj71W/R85xeEKBVOVgbUD6lkS0ZyYA2ZZOJPEtdMjJX9NEPW6NUv56HEA2xwE1oLXA7bV8o/FDnkEt9uLXPAkEA2FHfMmSqgtqG3+FoP2NUj8s5oG+B8qd1UvXQYD6PrYOQ2xXeQbLIfVBwLymGBEnJPRO8GHmHU7+661R8nBOh6wJBAKbLvaU+BSwXMVrLFPXxT0QZ9Ln2n+aNngB3Z/BJ8ka9H7UTRlmaMOKRVStkf0N5gPL5gUk8k7kuIN7T9JGYCQsCQQC2pVImM3cA61AsIh8qPk086COtAdmfr6LRPDoHuWsI32hkg29Y24KKxGskdxPv9PkUN+B+bcZEgUNqxbg89BqnAkAZ//uVAULYYH4sW70FsPYpHjTNIbUYUGrid+TTkX0pGUoYs+mqx/59Y2xj9KlhDyO2SZpM+RBO0RXowsCvi0iV}
+aes:
+  key: ${AES_KEY:WhAKsI5Me4IoeJerwNtiXW0mCYINN6I7}
+
+md5:
+  salt: ${MD5_SALT:vme50}
+swagger:
+  enabled: true
