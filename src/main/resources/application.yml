@@ -2,7 +2,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: Iamdtcdzt123@
+    password: root
     url: jdbc:mysql://127.0.0.1:3306/eladmin?characterEncoding=utf-8&useSSL=false
   jpa:
     show-sql: true
@@ -10,8 +10,8 @@ spring:
       ddl-auto: update
   elasticsearch:
     uris: http://localhost:9200
-    username: elastic
-    password: a4HXPBpWZ6wLtKE4LsTT
+#    username: elastic
+#    password: a4HXPBpWZ6wLtKE4LsTT
     mvc:
       pathmatch:
         matching-strategy: ant_path_matcher

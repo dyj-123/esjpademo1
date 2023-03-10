@@ -10,28 +10,45 @@ import com.example.esjpademo1.utils.ResultBean;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
 @RestController
 @RequiredArgsConstructor
 @Api(tags="测试操作")
+@RequestMapping("person")
 public class EsController {
 
     private final EsService esService;
 
     @ApiOperation("添加一个人")
-    @GetMapping("/addPerson")
+    @PostMapping
     @SensitiveMethod
-    public ResultBean addPerson(EsPerson esPerson) throws Exception {
+    public ResultBean addPerson(@RequestBody  EsPerson esPerson) throws Exception {
         esService.addPerson(esPerson);
         return ResultBean.success();
     }
+
+    @ApiOperation("根据身份证删除一个人")
+    @DeleteMapping
+    public ResultBean delPerson(@RequestBody String[] cards){
+        esService.delPerson(cards);
+        return ResultBean.success();
+    }
+
+    @ApiOperation("修改一个人")
+    @PutMapping
+    @SensitiveMethod
+    public ResultBean editPerson(@RequestBody  EsPerson esPerson) throws Exception {
+        esService.editPerson(esPerson);
+        return ResultBean.success();
+    }
+
     @ApiOperation("数据库导入")
     @GetMapping("/inport")
     public ResultBean inportAll() throws Exception {
+
         int num = esService.inport();
         return ResultBean.success("成功导入"+num);
     }

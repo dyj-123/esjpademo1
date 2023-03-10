@@ -15,5 +15,9 @@ public interface EsService {
 
     int inport() throws Exception;
 
-   Object decrypt(String str) throws Exception;
+    Object decrypt(String str) throws Exception;
+
+    void delPerson(String[] cards);
+
+    void editPerson(EsPerson esPerson);
 }

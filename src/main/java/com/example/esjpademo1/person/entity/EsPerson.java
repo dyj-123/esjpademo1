@@ -3,19 +3,21 @@ package com.example.esjpademo1.person.entity;
 
 import com.example.esjpademo1.annotation.OriginData;
 import com.example.esjpademo1.annotation.SensitiveField;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.*;
 
 import java.io.Serializable;
 import java.time.Instant;
-import java.util.Date;
-import java.util.Set;
+import java.util.List;
 
 @Data
 @OriginData
+@AllArgsConstructor
+@NoArgsConstructor
 @Document(indexName = "newperson",createIndex = true)
 @Setting(shards = 3, replicas = 1,refreshInterval="1ms")
 public class EsPerson implements Serializable {
@@ -35,6 +37,7 @@ public class EsPerson implements Serializable {
     private Integer age;
     /** 身份证号码 */
     @Id
+    @Field(type = FieldType.Keyword)
     @SensitiveField(value = "MD5")
     private String card;
     /** 户籍地址 */
@@ -117,8 +120,10 @@ public class EsPerson implements Serializable {
     @Field(type = FieldType.Keyword)
     private String rhfenli;
 
+    private List<Long[]> labelIds;
 
-    private Set<Long> labelIds;
+    private List<Long> inttIds;
+
     @CreatedDate
     @Field(type = FieldType.Date,format={DateFormat.basic_date, DateFormat.year_month_day})
     private Instant ingest_timestamp;
